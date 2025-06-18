@@ -27,7 +27,7 @@ st.set_page_config(page_title="企鹅分类器", #页面标题
 page_icon=":penguin:", #页面图标
 layout='wide')
 with st.sidebar:
-    st.image ('images/rigth_logo.png', width=100)
+    st.image ('rigth_logo.png', width=100)
     st.title (' 请选择页面 ')
     page = st.selectbox ("请选择页面", ["简介页面", "预测分类页面"], label_visibility='collapsed')
 if page == "简介页面":
@@ -37,7 +37,7 @@ if page == "简介页面":
 该数据集是由 Gorman 等收集，并发布在一个名为 palmerpenguins 的 R 语以对南极企鹅种类进行分类和研究。
 该数据集记录了 344 行观测数据，包含 3 个不同物种的企鹅：阿德利企鹅、巴鹅和帽带企鹅的各种信息。""")
     st.header (' 三种企鹅的卡通图像 ')
-    st.image ('images/penguins.png')
+    st.image ('penguins.png')
 elif page == "预测分类页面":
     st.header ("预测企鹅分类")
     st.markdown ("这个 Web 应用是基于帕尔默群岛企鹅数据集构建的模型。只需输入 6 就可以预测企鹅的物种，使用下面的表单开始预测吧！")
@@ -79,7 +79,7 @@ if submitted:
     st.write (f' 根据您输入的数据，预测该企鹅的物种名称是：{predict_result_species}')
 with col_logo:
     if not submitted:
-        st.image('images/rigth_logo.png', width=300)
+        st.image('rigth_logo.png', width=300)
     else:
-        st.image(f'images/{predict_result_species}.png', width=300)
+        st.image(f'{predict_result_species}.png', width=300)
     
