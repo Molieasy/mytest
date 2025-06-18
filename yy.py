@@ -66,6 +66,8 @@ elif sex == ' 雄性 ':
     sex_male = 1
 
 format_data = [bill_length, bill_depth, flipper_length, body_mass,island_dream, island_torgerson, island_biscoe, sex_male,sex_female]
+if ((bill_length < 32.1 or bill_length > 60) or(bill_depth < 13.1 or bill_depth > 21.5) or(flipper_length < 172 or flipper_length > 231) or(body_mass < 2700 or body_mass > 6300)):
+    st.error("输入的特征值超出正常企鹅特征范围，请重新输入！")
 with open('rfc_model.pkl', 'rb') as f:
     rfc_model = pickle.load(f)
 with open('output_uniques.pkl', 'rb') as f:
